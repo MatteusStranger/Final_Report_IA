@@ -1,5 +1,4 @@
 \section{Metodologia}
-\label{SUBSEC:resourceAllocation}
 
 A projeto \textit{CAPTCHA}, foi construído com base em uma arquitetura de redes neurais em \textit{Deep Learning} com cinco camadas convolucionais, sendo uma entrada e uma saída acrescido de três \textit{hidden layers}, mais especificamente Conv2D com os parâmetros de \textit{padding = ``same''} e ativação ``relu''. As próximas subseções descreverão os procedimentos que compõem o projeto, que são o dataset, instanciação, processamento, reconhecimento e quebra das imagens alfanuméricas CAPTCHA. O processo inclui também o pré-processamento de dados de entrada, estruturação da rede, função de predição e execução.
 
@@ -16,22 +15,32 @@ O Dataset é montado utilizando uma funcionalidade desenvolvida pela equipe cham
     \item OS: biblioteca responsável por chamadas ao Sistema Operacional;
 \end{itemize}
 
-O gerador de datasets elenca, inicialmente, os símbolos alfa-numéricos para criação do CAPTCHA, unindo as letras do alfabeto em baixa e alta caixa com os dígitos indo-arábicos (veja o trecho \ref{dataset})
+O gerador de datasets elenca, inicialmente, os símbolos alfa-numéricos para criação do CAPTCHA, unindo as letras do alfabeto em baixa e alta caixa com os dígitos indo-arábicos (veja o trecho \ref{inicio})
 
-\lstinputlisting[language=Python, label=dataset, caption=Instanciação de Dataset,xleftmargin=.05\textwidth, xrightmargin=.03\textwidth
-]{ModeloRelatorio/trechos_de_codigo/instancia_dataset.py}
+\lstinputlisting[language=Python, label=inicio, caption=Instanciação de Dataset,xleftmargin=.05\textwidth, xrightmargin=.03\textwidth
+]{Relatorio/trechos_de_codigo/instancia_dataset.py}
 
 O texto do CAPTCHA é gerado por um string de tamanho fixo de cinco caracteres, escolhidos aleatoriamente dos símbolos disponíveis. A lib \textit{captcha} do python é aplicada para unir a string com a imagem, e para a geração da última. A lib recebe por parâmetro o texto e que é formatado para uma fonte específica e adicionados ruídos de traço e pontos (trecho \ref{string}). A adição desses últimos elementos é para deixar mais verossímil, já que, em tese, o CAPTCHA deve ser resolvido por um humano, como forma de segurança (Figura \ref{fig:captcha}).
 
 \lstinputlisting[language=Python, label=string, caption=Montagem do CAPTCHA,xleftmargin=.05\textwidth, xrightmargin=.03\textwidth
-]{ModeloRelatorio/trechos_de_codigo/monta_captcha.py}
+]{Relatorio/trechos_de_codigo/monta_captcha.py}
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.3]{ModeloRelatorio/figuras/captcha.png}
+    \includegraphics[scale=0.3]{Relatorio/figuras/captcha.png}
     \caption{Exemplo de CAPTCHA gerado}
     \label{fig:captcha}
 \end{figure}
+
+É necessário uma quantidade suficientemente boa de imagens no dataset em função de dois parâmetros específicos: treinamento da rede neural e recursos computacionais. Dessa forma, foi instanciado um número de 1000 imagens na composição do dataset. Para que não se perca nenhum dataset anteriormente gerado, a cada nova execução cria-se uma pasta com ``\textit{nome}'' + ``\textit{data e hora de criação}''. Isso é para o caso de ser necessário executar com um determinado dataset especificamente (trecho \ref{dataset}). 
+
+\lstinputlisting[language=Python, label=dataset, caption=Montagem do Dataset,xleftmargin=.05\textwidth, xrightmargin=.03\textwidth
+]{Relatorio/trechos_de_codigo/gera_dataset.py}
+
+\subsection{Estruturação da rede neural}
+
+A Rede Neural recebe como parâmetro de entrada o número de símbolos com os quais ele irá trabalhar (trecho \ref{inicio})
+
 
 \subsection{Instanciação}
 Começo do código até o def preprocessing
@@ -39,8 +48,6 @@ Começo do código até o def preprocessing
 \subsection{Pré-Processamento}
 
 Descrição do pré-processamento
-
-\subsection{Estruturação da rede neural}
 
 \subsection{Função de predição}
 

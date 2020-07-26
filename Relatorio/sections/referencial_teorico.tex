@@ -1,0 +1,45 @@
+\section{Referencial teórico}
+Nesta seção, serão apresentados os conceitos e ferramentas utilizados neste trabalho, através de uma revisão da literatura a fim assegurar a compreensão por completo do projeto. 
+
+\subsection{CAPTCHA}
+
+\subsection{Aprendizado de Máquina}
+Atualmente a produção de dados está em alto crescimento e vem de diversas fontes como imagens, textos, sons, entre outras fontes. Não são apenas pessoas que os produzem, dispositivos eletrônicos e aplicações também os produzem. 
+
+Apesar das pessoas conseguirem interpretar dados e gerar conhecimento, é impossível trabalhar com uma gama gigantesca. Portanto, é necessário terceirizar essa função para sistemas automatizados que conseguem aprender com os dados e suas mudanças, sendo deveras adaptativo.
+Esses sistemas utilizam de aprendizado de máquina que, por sua vez, utiliza-se de ferramentas e tecnologia que buscam responder perguntas e
+gerar insights através do consumo dados \cite{santos2018identificaccao}.
+
+A primeira etapa disso é o treinamento, onde há um consumo de dados para criação e parametrização de um modelo de predição, que será usado para gerar previsões de resultados futuros para novos dados \cite{russell2002artificial}. .  
+
+Contudo, para que o próprio treinamento seja satisfatório, os dados devem ser tratados para selecionar quais são importantes de fato, o que requer muito esforço \cite{russell2002artificial}.
+Muitas empresas buscam utilizar de Aprendizado de Máquina para suas aplicações a fim de personalizar os seus produtos de forma automatizada para cada usuário, como em recomendação de vídeos, identificação fácil, sistemas de saúde, segurança, entre outras aplicações. Há três grandes categorias de aprendizado de máquina: supervisionado, não-supervisionado e reforço \cite{russell2002artificial}. Aqui, foi usado o aprendizado supervisionado, portanto esse será o foco.
+\subsubsection{Aprendizado Supervisionado}
+
+Neste tipo de aprendizado, os dados são rotulados, então eles são corretos para realizar o treinamento do modelo. Esse método é deveras eficiente, já que o sistema pode trabalhar com informações corretas \cite{russell2002artificial}. 
+
+A rotulação dos dados é o cerne deste tipo de aprendizado, pois quando os rótulos são contínuos, então o problema é de regressão e quando forem discretos, então o problema é de classificação \cite{russell2002artificial}.
+
+Vejamos dois exemplos:
+\begin{enumerate}
+    \item Regressão — Dada uma imagem de homem/mulher, tentar prever sua idade com base em dados da imagem.
+    \item Classificação — Dada um exemplo de tumor cancerígeno, tentar prever se ele é benigno ou maligno através do seu tamanho e idade do paciente.
+\end{enumerate}
+
+Em resumo, o aprendizado supervisionado realiza um treinamento de um modelo por meio de um histórico de dados rotulados e realiza predições de outros dados futuros não rotulados \cite{santos2018identificaccao}, onde no primeiro exemplo seria a imagem de homem/mulher e no segundo exemplo as características de um tumor.
+
+%\subsection{Redes Neurais Artificiais (RNA)}
+\subsection{Redes Neurais Convolucionais (CNN)}
+\subsubsection{Arquitetura}
+\subsubsection{Camada Convolucional}
+\subsubsection{Camada de Pooling}
+\subsubsection{Camada Totalmente Conectada}
+\subsection{Funções de Ativação}
+\subsubsection{Função Sigmoide}
+\subsubsection{Função Unidade Linear Retificada (ReLU)}
+\subsubsection{Função SoftMax}
+\subsubsection{Função de Perda Cross-Entropy}
+\subsubsection{Inicialização de Pesos}
+\subsection{Função de ativação Adam}
+\subsection{Overfitting}
+\subsection{Dropout}
